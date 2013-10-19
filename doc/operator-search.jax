@@ -1,0 +1,40 @@
+*operator-search.txt*	範囲の検索を行います
+
+
+
+==============================================================================
+概要						*operator-search-introduction*
+
+*operator-search* は範囲の検索を行う operator です。
+operator の実行後は |n| や |N| で移動する事もできます。
+ただし、operator の実行後から範囲の位置が変わった場合は正しく動作しません。
+
+- Requires
+  operator-user - https://github.com/kana/vim-operator-user
+
+
+==============================================================================
+使い方						*operator-search-usage*
+
+
+Example: >
+	nmap <Space>s <Plug>(operator-search)
+
+	" 関数内の検索を行う
+	" require - https://github.com/kana/vim-textobj-function
+	nmap <Space>/ <Plug>(operator-search)if
+
+<
+
+==============================================================================
+インターフェース				*operator-search-interface*
+
+------------------------------------------------------------------------------
+キーマッピング					*operator-search-key-mappings*
+
+["x]<Plug>(operator-search){motion}		*<Plug>(operator-search)*
+	{motion} でカーソルが動く範囲のテキストを検索する。
+
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
