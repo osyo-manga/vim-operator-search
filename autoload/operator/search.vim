@@ -33,9 +33,5 @@ function! operator#search#do(motion_wise)
 endfunction
 
 
-function! Test()
-	execute "echo 42"
-endfunction
-
 let &cpo = s:save_cpo
 unlet s:save_cpo
