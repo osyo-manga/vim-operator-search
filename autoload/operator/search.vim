@@ -23,8 +23,8 @@ function! operator#search#do(motion_wise)
 	if empty(pattern)
 		return
 	endif
-	if v:count >= 1
-		let @/ = s:region_search_pattern([line('.'), 1], [(line('.') + (v:count - 1)), col('$')], pattern)
+	if a:motion_wise ==# 'line'
+		let @/ = s:region_search_pattern([getpos("'[")[1], 1], [getpos("']")[1], col('$')], pattern)
 	else
 		let @/ = s:region_search_pattern(getpos("'[")[1:], getpos("']")[1:], pattern)
 	endif
